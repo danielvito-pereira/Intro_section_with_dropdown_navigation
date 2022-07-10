@@ -1,0 +1,6 @@
+img {
+  width: 100%;
+  display: block;
+  margin-inline: auto;
+  object-position: 0 2rem;
+}
