@@ -1,6 +1,6 @@
 nav {
   display:flex;
-
+  margin-top: 1rem;
 }
 
 nav .wrapper {
