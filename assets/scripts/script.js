@@ -1,17 +1,7 @@
+const button = document.querySelector('button');
+const nav    = document.querySelector('ativo');
 
 
-
-
-
-
-
-
-
-
-function openMenu() {
-  document.body.classList.add("menu-expanded");
-}
-
-function closeMenu() {
-  document.body.classList.remove("menu-expanded");
-}
+button.addEventListener('click',()=>{
+  nav.classList.toggle('ativo')
+})

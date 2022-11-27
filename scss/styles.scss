@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+  $Almost-White: hsl(0, 0%, 98%);
+  $Medium-Gray: hsl(0, 0%, 41%);
+  $Almost-Black: hsl(0, 0%, 8%);
+  /*reset*/
+  *, body {
+    font-family:  'Epilogue', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: overlay;
+  }
+  
+  h1,h2,h3{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  button {
+    border: none;
+    font-family: inherit;
+  }
+
+
+  /*header*/
+
+
+
+  @mixin flexivel( $dis , $direction , $corte , $just , $align ){
+    display         : $dis;
+    flex-flow       : $direction $corte;
+    justify-content : $just;
+    align-items     : $align;
+}
+
+  .header{
+    @include flexivel (flex , row , nowrap , space-between , center );
+    width: 100%;
+
+    .nav{
+        display: none;
+      .ul{
+        @include flexivel (flex , column , nowrap , center , flex-start );
+        width: 100%;
+        gap: 20px;
+        list-style: none;
+        background-color:red;
+        .li{
+          a{
+            text-decoration: none;
+            &:hover{
+              color: $Almost-Black;
+              transition: all 0.5s ease-in-out;
+            }
+          }
+        }
+        }
+      }
+      
+    }
+  
+  .header.ativo{
+      @include flexivel (flex, column , nowrap , flex-start , center );
+      gap: 20px;
+      background-color: $Almost-White;
+      height: 100vh;
+      width: 50%;
+    }
+
+
+  /*body*/
+  main{
+    @include flexivel( flex , column , nowrap , center , center );
+  }
+  .hero{
+    img{
+      width:100%;
+      height:100%;
+    }
+  }
+
+  .content{
+    @include flexivel (flex , column , nowrap , center,center);
+    padding:1em;
+    h1{
+      font-weight: 700;
+      font-size:30px;
+    }
+    p{
+      text-align: center;
+      color:$Medium-Gray;
+      font-size:15px;
+      line-height: 1.5;
+      font-weight: 500;
+      font-stretch: expanded;
+    }
+    .btn{
+      background-color:$Almost-Black;
+      color:$Almost-White;
+      padding: 1em;
+      border-radius: 5px;
+
+      font-weight:700;
+      cursor: pointer;
+      padding:1em 2em;
+      &:hover{
+        background-color:$Almost-White;
+        color:$Almost-Black;
+        border: 1px solid $Almost-Black;
+
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .footer{
+    @include flexivel (flex , row , nowrap , space-between , center );
+    width: 100%;
+    padding: 1em;
+    padding-top: 2em;
+    img{
+      width: 20%;
+    }
+  }
+
